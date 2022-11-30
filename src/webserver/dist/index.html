@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Name Generator</title>
+    
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <script type="text/javascript" src="/site.js"></script> 
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body onload="updateMap()">
+    <div class="main">
+	    <h1 class="title box-item">Name Generator</h1>
+
+	    <div id="namearea" class="box-item">
+		<!-- Area for generated names to show-->
+	    </div>   
+
+	    <button class="box-item" id="generate" onclick="generateName()">Generate Name</button>
+
+	    <div class="options box-item">
+		<select id="gender">
+		    <option value="male">Male</option>
+		    <option value="female">Female</option>
+		</select>
+
+		<select id="origin" onchange="if (this.selectedIndex) updateMap();">
+		    <option value="uk">UK</option>
+		    <option value="usa">USA</option>
+		    <option value="taiwan">Taiwan</option>
+		    <option value="switzerland">Switzerland</option>
+		    <option value="sweden">Sweden</option>
+		    <option value="spain">Spain</option>
+		    <option value="south_africa">South Africa</option>
+		    <option value="slovenia">Slovenia</option>
+		    <option value="singapore">Singapore</option>
+		    <option value="serbia">Serbia</option>
+		    <option value="russia">Russia</option>
+		    <option value="puerto_rico">Puerto Rico</option>
+		    <option value="portugal">Portugal</option>
+		    <option value="poland">Poland</option>
+		    <option value="philpine">Philippines</option>
+		    <option value="peru">Peru</option>
+		    <option value="panama">Panama</option>
+		    <option value="norway">Norway</option>
+		    <option value="nigeria">Nigeria</option>
+		    <option value="netherland">Netherlands</option>
+		    <option value="namibia">Namibia</option>
+		    <option value="moldova">Moldova</option>
+		    <option value="mexico">Mexico</option>
+		    <option value="mauritius">Mauritius</option>
+		    <option value="malta">Malta</option>
+		    <option value="malaysia">Malaysia</option>
+		    <option value="macao">Macao</option>
+		    <option value="luxemburj">Luxembourg</option>
+		    <option value="lithunia">Lithuania</option>
+		    <option value="jamaica">Jamaica</option>
+		    <option value="italy">Italy</option>
+		    <option value="israel">Israel</option>
+		    <option value="ireland">Ireland</option>
+		    <option value="iran">Iran</option>
+		    <option value="indonesia">Indonesia</option>
+		    <option value="india">India</option>
+		    <option value="iceland">Iceland</option>
+		    <option value="hungary">Hungary</option>
+		    <option value="honduras">Honduras</option>
+		    <option value="haiti">Haiti</option>
+		    <option value="finland">Finland</option>
+		    <option value="fiji">Fiji</option>
+		    <option value="ethopia">Ethiopia</option>
+		    <option value="estonia">Estonia</option>
+		    <option value="ecuador">Ecuador</option>
+		    <option value="dibouti">Djibouti</option>
+		    <option value="denmark">Denmark</option>
+		    <option value="czech">Czech</option>
+		    <option value="cyprus">Cyprus</option>
+		    <option value="croatia">Croatia</option>
+		    <option value="costa">Costa Rica</option>
+		    <option value="colombia">Colombia</option>
+		    <option value="chile">Chile</option>
+		    <option value="canada">Canada</option>
+		    <option value="cameroon">Cameroon</option>
+		    <option value="cambodia">Cambodia</option>
+		    <option value="burundi">Burundi</option>
+		    <option value="bulgaria">Bulgaria</option>
+		    <option value="brunei">Brunei</option>
+		    <option value="brazil">Brazil</option>
+		    <option value="botswana">Botswana</option>
+		    <option value="bangladesh">Bangladesh</option>
+		    <option value="azerbaijan">Azerbaijan</option>
+		    <option value="austria">Austria</option>
+		    <option value="argentina">Argentina</option>
+		    <option value="angolia">Angola</option>
+		    <option value="albania">Albania</option>
+		    <option value="afghanistan">Afghanistan</option>
+		</select>
+	    </div>
+
+	    <canvas id="worldmap" width="2947" height="1601"></canvas>
+
+
+        <div>
+            <button id="advanced" onclick="toggleAdvanced()">Advanced Options</button>
+        </div>
+
+	    <div id="advancedoptions" style="display: none">
+		<p></p>
+		<label>number of names: </label><input id="number" type="number" value="1" min="1" max="99" maxlength="2" onkeyup="forceCount()">
+		<p></p>
+        
+		<label>generate surnames: </label><input id="surnames" type="checkbox" checked="true">
+            <span class="indicator" onclick="checkBox(document.getElementById('surnames'))"></span>
+        </input>
+	    </div>
+	</div>
+
+
+</body>
+</html>
